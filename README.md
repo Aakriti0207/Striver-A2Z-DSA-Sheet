@@ -7,7 +7,6 @@ This repository contains my solutions to Data Structures and Algorithms problems
 
 - Arrays
 - Searching & Sorting (Binary Search)
-- Strings
 - Linked Lists (coming soon!)
 
 ## 📚 Resources I'm Following
