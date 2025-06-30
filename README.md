@@ -6,7 +6,7 @@ This repository contains my solutions to Data Structures and Algorithms problems
 ## 📌 Topics Covered So Far
 
 - Arrays
-- Searching & Sorting (Binary Search)
+- Searching & Sorting
 - Linked Lists (coming soon!)
 
 ## 📚 Resources I'm Following
