@@ -35,3 +35,25 @@ public:
         return {-1, -1};
     }
 };
+
+//Optimal Approach
+// 2 pointer- ONLY for SORTED arrays
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n=nums.size();
+        sort(nums[0],nums[n-1]);
+        int left=0;
+        int right=n-1;
+        while(left < right){
+            long long sum= nums[left] + nums[right];
+            if(sum == target){
+                return {left,right};
+            }else if(sum < target) left++;
+            else right--;
+        }
+        return{-1,-1};
+    }
+};
+
