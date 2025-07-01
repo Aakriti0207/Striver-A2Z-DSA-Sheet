@@ -9,6 +9,7 @@
 //You are initially at the river (i.e., x = -1). It takes one step to move one unit on the x-axis.
 
 //Given a 0-indexed integer array plants of n integers, where plants[i] is the amount of water the ith plant needs, and an integer capacity representing the watering can capacity, return the number of steps needed to water all the plants.
+
 class Solution {
 public:
     int wateringPlants(vector<int>& plants, int capacity) {
