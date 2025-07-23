@@ -49,7 +49,7 @@ public:
                 return mid;
             }else if(nums[mid-1] < nums[mid]){ //left half
                 low = mid + 1; //ELIMINATE LEFT HALF
-            }else{
+            }else{   //NOT WRITING ANY CONDITION HERE WILL TAKE CARE OF ANOTHER EDGE CASE -> mid is the lowest element...
                 high = mid-1; //ELIMINATE RIGHT HALF
             }
         }
