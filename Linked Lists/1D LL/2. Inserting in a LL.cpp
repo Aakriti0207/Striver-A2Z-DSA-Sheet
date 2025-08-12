@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//From here till line 40 THE CODE IS SAME AS LAST FILE- 
 class Node{
     public:
     int data;
@@ -92,4 +93,18 @@ Node* insertBeforeValue (Node* head , int el , int val){
         temp = temp -> next;
     }
     return head;
+}
+int main(){
+    vector<int> arr = {12 , 8 , 5 , 7};
+    Node* head = convertingArray2LL(arr);
+    printLL(head);
+    Node* newHead = insertHead(head,25);
+    printLL(newHead);
+    Node* newTail = insertTail(head,25);
+    printLL(newTail);
+    Node* newElat2 = insertPosition(head , 25 , 2);
+    printLL(newElat2);
+    Node* elBefore7 = insertBeforeValue(head , 25 , 7);
+    printLL(elBefore7);
+    return 0;
 }
