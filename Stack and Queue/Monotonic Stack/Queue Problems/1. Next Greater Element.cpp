@@ -31,4 +31,10 @@ public:
         }
         return ans;
     }
-};
+};TC-> O(n1 * n2)
+
+
+//Optimal Approach - Using Stack- LIFO 
+//We iterate from left and store element in stack then we increment i and check for next element 
+    // If the next element is greater than the top element in stack- pop, to maintain decreasing order in Stack and add that element in stack as well
+    
