@@ -1,4 +1,4 @@
-//Insertion
+//Operations
 #include<bits/stdc++.h>
 using namespace std;
 class heap{
@@ -11,9 +11,10 @@ public:
     }
     void swap(int &x , int &y){
         int temp = x;
-        x=y;
+        x=y;  
         y=temp;
     }
+    //Insertion
     void insert(int val){
         size++;
         int index = size;
@@ -25,6 +26,22 @@ public:
                 index = parent;
             }else{
                 return;
+            }
+        }
+    }
+    //Deletion
+    void Delete(){
+        arr[1] = arr[size];         //Assigning first value to last element
+        size--;
+        for(int i=1 ; i<size ; i++){
+            int leftnode = 2*i;
+            int rightnode = 2*i + 1;
+            if(arr[leftnode] > arr[i]){
+                swap(arr[leftnode] , arr[i]);
+                i = leftnode;
+            }else if(arr[rightnode] > arr[i]){
+                swap(arr[rightnode] , arr[i]);
+                i = rightnode;
             }
         }
     }
@@ -44,6 +61,7 @@ int main(){
     h.insert(52);
     h.insert(54);
     h.print();
-
+    h.Delete();
+    h.print();
     return 0;
 }
