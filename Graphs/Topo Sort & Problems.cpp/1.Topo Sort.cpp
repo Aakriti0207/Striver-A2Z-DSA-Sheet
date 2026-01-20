@@ -49,3 +49,49 @@ class Solution {
         return ans;
     }
 };
+
+
+//Method2 -> BFS + Indegree + Queue -> Kahn's Algorithm
+
+/*
+Approach-
+ 1. Calculate indegree of graph ie the number of nodes with incoming edges towards the curr node
+ 2. Create a queue & start pushing the nodes with indegree = 0
+ 3. Traverse the queue & reduce the indegree of its neighbours by 1.
+ 4. If indegree of any neighbour after reduction becomes 0-> push it into the queue
+ 5. Repeat until queue is empty
+*/
+
+//CODE-
+class Solution {
+  public:
+    vector<int> topoSort(int V, vector<vector<int>>& edges) {
+        //BFS-Kahn's Algorithm
+        //We use queue & indegree here... 
+        vector<vector<int>> adj(V);
+        vector<int> indegree(V,0);
+        for(auto edge : edges){
+            int u = edge[0];
+            int v = edge[1];
+            adj[u].push_back(v);
+            indegree[v]++;
+        }
+        queue<int>q;
+        for(int i=0 ; i<V ; i++){
+            if(indegree[i] == 0){
+                q.push(i);
+            }
+        }
+        vector<int> ans;
+        while(!q.empty()){
+            int top = q.front();
+            q.pop();
+            ans.push_back(top);
+            for(int neigh : adj[top]){
+                if(indegree[neigh]) indegree[neigh]--;
+                if(!indegree[neigh]) q.push(neigh);
+            }
+        }
+        return ans;
+    }
+};
