@@ -1,0 +1,83 @@
+"Stop Solving the same problem again and again, save answers-reuse them- be smart...
+
+DP- 
+    suppose we are solving a problem which requires solving smaller problems again & again, 
+    Instead of recomputing every time- store them in an array[dp] and just look them up next time...
+
+WHEN DP-
+    Problem is good for DP if it has-
+    1. Overlapping Subproblems-
+        SAME subproblem repeats again & again
+    2. Optimal Substructure-
+        Big problem's answer depends on smaller problem's answer
+If both are true- DP is the perfect choice
+
+TWO WAYS TO PERFORM DP- 
+    1. Memoization (Top-Down):
+        Use Recursion
+        Store answers in an array/map
+    Flow:
+        Solve -> If already solved? return stores answer
+        else -> compute -> store -> return
+    
+    2. Tabulation (Bottom-Up):
+        Use loops
+        Build Solution from smallest to largest
+    Flow:
+        Base Case first 
+        then fill up the table -> step by step
+
+
+Eg - Fibonacci
+
+Regular Recursion-
+
+int fibo (int n){
+    if(n<=1) return n;
+    return fibo(n-1)+fibo(n-2);
+}
+Naive method- same values are calculated again & again
+
+Memoization-
+
+int fibo(int n){
+    vector<int> dp(n+1,-1);
+    if(n<=1) return n;
+    else if(dp[n] != -1) return dp[n];
+    else{
+        dp[n] = fibo(n-1)+fibo(n-2);
+        return dp[n];
+    }
+}
+here, TC -> O(N) SC -> O(N) + O(N) recursion stack space + dp array
+
+Tabulation Method-
+
+into fibo(int n){
+    vector<int> dp(n+1);
+    dp[0] = 0 , dp[1] = 1;
+    for(int i=2 ; i<n ; i++){
+        dp[i] = dp[i-1] + dp[i-2];
+    }
+    return dp[n];
+}
+here, TC=O(N) BUT SC = O(N) No recursion stack space used
+
+
+Most optimal Space Complexity?
+
+Observation- For each computation, in this question, we don't need ALL values, we just need previous 2 
+thus, we can store previous 2 values in variables & avoid using a WHOLE array for it.
+
+int fibo(int n){
+    int prev1 = 0, prev2 = 1;
+    for(int i=2 ; i<n ; i++){
+        int curr = prev1 + prev2;
+        prev2 = prev1;
+        prev1 = curr;
+    }
+    return prev1;
+}
+
+This optimises the SC to O(1).
+
