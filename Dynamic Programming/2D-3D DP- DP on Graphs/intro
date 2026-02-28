@@ -1,0 +1,10 @@
+2D DP-
+    Instead of dp[i] we use dp[i][j]
+    Mostly used in grid problems, knapsack-strings-paths etc
+
+Steps that can be followed-
+    1. DP STATE
+        identify what changes in the problem
+    2. Recurrence Logic
+    3. Base case 
+
