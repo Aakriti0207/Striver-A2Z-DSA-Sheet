@@ -26,6 +26,11 @@ public:
 
   //OPTIMAL SOLUTION -> Don't use extra Space
     //Iterative
+/*
+  Reverse the LINKS-
+  Initial : next next next next next
+  Final: prev = next
+*/
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
@@ -42,7 +47,7 @@ public:
 }; TC -> O(n)
 
 
-    //RECURSIVE
+//OPTIMAL APPROACH - Recursion
 
 class Solution {
 public:
