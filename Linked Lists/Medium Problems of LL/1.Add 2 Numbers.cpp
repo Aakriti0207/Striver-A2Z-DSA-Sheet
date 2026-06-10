@@ -5,16 +5,6 @@
 
 //You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
@@ -43,6 +33,7 @@ public:
         }
         return dummy -> next;
     }
-};// TC-> O(l1 * l2)  SC-> O(max(l1 , l2))
+};
+// TC-> O(l1 * l2)  SC-> O(max(l1 , l2))
 
 //We use dummy node because without it we will have to write multiple conditional statements for multiple edge cases
