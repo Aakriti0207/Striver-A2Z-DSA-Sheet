@@ -3,17 +3,6 @@ Given the head of a linked list, remove the nth node from the end of the list an
 
 //BRUTE FORCE APPROACH -> delete (n-L+1)th node from start..
 
-  
-  /**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
@@ -48,6 +37,8 @@ public:
 //Here, we use the 2 pointer method 
 //we initialise fastp and slowp pointers and traverse fastp to nth node first THEN we traverse both fastp and slowp together until fastp reaches the LAST node
 //Thus, out slowp will automatically reach the L-Nth node
+
+  //EDGE CASE => If fastp variable becomes NULL then Nth node from end is the head
 
 class Solution {
 public:
